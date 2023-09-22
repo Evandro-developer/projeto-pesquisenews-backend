@@ -186,3 +186,5 @@ Um agradecimento especial a todos que contribuíram para este projeto, seja por 
 Além disso, gostaria de agradecer à comunidade de desenvolvedores e aos muitos recursos online que tornaram possível aprender e implementar as várias tecnologias e bibliotecas usadas neste projeto. A jornada de aprendizado nunca termina, e sou grato por todas as oportunidades de aprendizado que surgiram ao longo do caminho.
 
 Finalmente, obrigado a você, leitor, por se interessar e gastar seu tempo aprendendo sobre o projeto PesquiseNews. Esperamos que você ache o projeto útil e talvez até seja inspirado a criar algo semelhante ou a contribuir para este projeto. Juntos, podemos continuar a expandir e melhorar o mundo do desenvolvimento web.
+
+Obrigado.

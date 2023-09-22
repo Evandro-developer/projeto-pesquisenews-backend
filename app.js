@@ -16,7 +16,6 @@ const {
 const app = express();
 const PORT = process.env.PORT;
 
-// Configuração do CORS
 const corsOptions = {
   origin: ["http://localhost:3000", "http://localhost:3001"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -26,14 +25,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Configuração do Helmet
 app.use(helmet());
 
-// Middleware para JSON e URL-encoded data
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
-// Conexão com o MongoDB
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -52,14 +48,12 @@ app.use(httpRequestLogger);
 // Aplica o limitador de taxa a todas as rotas
 app.use(limiter);
 
-// Define as rotas principais usando o middleware "routes"
-app.use("/", routes);
-
-// Rota para signup
 app.post("/signup", validateUserSignup, createUser);
 
-// Rota para signin
 app.post("/signin", validateUserSignin, userLogin);
+
+// Define as rotas principais usando o middleware "routes"
+app.use("/", routes);
 
 // Middleware de log de erros
 app.use(httpErrorLogger);

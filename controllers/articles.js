@@ -28,8 +28,8 @@ const createArticle = async (req, res, next) => {
       urlToImage,
     } = req.body;
 
-    // Procura por um artigo existente na coleção Article com a mesma URL
-    const existingArticle = await Article.findOne({ url });
+    // Procura por um artigo existente na coleção Article com a mesma URL e owner
+    const existingArticle = await Article.findOne({ url, owner: ownerId });
 
     // Verifica se um artigo com a mesma URL já existe
     if (existingArticle) {
@@ -47,6 +47,13 @@ const createArticle = async (req, res, next) => {
       urlToImage,
       owner: ownerId,
     });
+
+    // Atualiza o usuário para adicionar o ID do novo artigo aos savedArticles
+    await User.findByIdAndUpdate(
+      ownerId,
+      { $push: { savedArticles: newArticle._id } },
+      { new: true }
+    );
 
     // Constrói a resposta
     const articlesArray = [newArticle];

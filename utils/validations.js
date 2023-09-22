@@ -28,21 +28,6 @@ exports.validateGetNews = celebrate({
   }),
 });
 
-exports.validateUserSignup = celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().pattern(emailRegex),
-    password: Joi.string().min(6).required(),
-    name: Joi.string().min(2).max(30).optional(),
-  }),
-});
-
-exports.validateUserSignin = celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-  }),
-});
-
 exports.validateArticleCreation = celebrate({
   body: Joi.object().keys({
     keyword: Joi.string().required(),
@@ -62,5 +47,20 @@ exports.validateArticleId = celebrate({
     articlesId: Joi.string()
       .required()
       .regex(/^[0-9a-fA-F]{24}$/),
+  }),
+});
+
+exports.validateUserSignup = celebrate({
+  body: Joi.object().keys({
+    email: Joi.string().required().pattern(emailRegex),
+    password: Joi.string().min(6).required(),
+    name: Joi.string().min(2).max(30).optional(),
+  }),
+});
+
+exports.validateUserSignin = celebrate({
+  body: Joi.object().keys({
+    email: Joi.string().required().email(),
+    password: Joi.string().required(),
   }),
 });

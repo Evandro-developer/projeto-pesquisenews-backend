@@ -7,7 +7,11 @@ const usersRouter = require("./users");
 const articlesRouter = require("./articles");
 
 router.use("/", newsRouter);
-router.use("/users", auth, validateAuthorizationHeader, usersRouter);
-router.use("/articles", auth, validateAuthorizationHeader, articlesRouter);
+
+// Middleware de validação do cabeçalho de autorização em todas as rotas após validateAuthorizationHeader
+router.use(validateAuthorizationHeader);
+
+router.use("/users", auth, usersRouter);
+router.use("/articles", auth, articlesRouter);
 
 module.exports = router;

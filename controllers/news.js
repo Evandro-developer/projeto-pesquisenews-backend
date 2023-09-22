@@ -26,7 +26,23 @@ async function getNews(req, res, next) {
       pageSize: 100,
     });
 
-    res.json(response);
+    // Formata a resposta dos artigos para se adequar ao esquema article
+    const transformedArticles = response.articles.map((article) => ({
+      keyword: keyWord,
+      title: article.title,
+      description: article.description,
+      publishedAt: article.publishedAt,
+      source: article.source.name,
+      url: article.url,
+      urlToImage: article.urlToImage,
+    }));
+
+    // Mantem o formato geral da resposta da NewsAPI, mas substitui a response no campo de artigos
+    res.json({
+      status: response.status,
+      totalResults: response.totalResults,
+      articles: transformedArticles,
+    });
   } catch (err) {
     console.error("Erro ao buscar notícias:", err);
     const error = new Error("Erro ao buscar notícias.");

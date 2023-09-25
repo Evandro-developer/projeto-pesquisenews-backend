@@ -1,46 +1,67 @@
-const NewsAPI = require("newsapi");
-const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
+const isValidArticle = (article) => {
+  // Lista de valores indesejados
+  const undesiredValues = [null, "[Removed]", "https://removed.com"];
+
+  // Verifica se algum valor indesejado está presente em quaisquer propriedades dos artigos
+  const hasUndesiredContent = [
+    "title",
+    "description",
+    "source",
+    "url",
+    "urlToImage",
+  ].some((prop) => undesiredValues.includes(article[prop]));
+
+  // Verifica se tem uma data inválida
+  const hasInvalidDate = article.publishedAt === "1970-01-01T00:00:00Z";
+
+  return !(hasUndesiredContent || hasInvalidDate);
+};
 
 async function getNews(req, res, next) {
   const keyWord = req.query.q;
-
-  if (!keyWord) {
-    return res
-      .status(400)
-      .json({ error: "O termo de pesquisa é obrigatório." });
-  }
-
   const toDate = new Date().toISOString().split("T")[0];
   const fromDate = new Date(new Date().setDate(new Date().getDate() - 7))
     .toISOString()
     .split("T")[0];
 
+  const baseURL = "https://nomoreparties.co/news/v2/everything?";
+  const queryParams = [
+    `q=${keyWord}`,
+    "language=pt",
+    "sortBy=relevancy",
+    "page=1",
+    `from=${fromDate}`,
+    `to=${toDate}`,
+    "pageSize=100",
+    `apiKey=${process.env.NEWS_API_KEY}`,
+  ].join("&");
+
+  const url = baseURL + queryParams;
+
   try {
-    const response = await newsapi.v2.everything({
-      q: keyWord,
-      language: "pt",
-      sortBy: "relevancy",
-      page: 1,
-      from: fromDate,
-      to: toDate,
-      pageSize: 100,
-    });
+    const response = await fetch(url);
 
-    // Formata a resposta dos artigos para se adequar ao esquema article
-    const transformedArticles = response.articles.map((article) => ({
-      keyword: keyWord,
-      title: article.title,
-      description: article.description,
-      publishedAt: article.publishedAt,
-      source: article.source.name,
-      url: article.url,
-      urlToImage: article.urlToImage,
-    }));
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar notícias: ${response.statusText}`);
+    }
 
-    // Mantem o formato geral da resposta da NewsAPI, mas substitui a response no campo de artigos
+    const responseData = await response.json();
+
+    const transformedArticles = responseData.articles
+      .filter(isValidArticle)
+      .map((article) => ({
+        keyword: keyWord,
+        title: article.title,
+        description: article.description,
+        publishedAt: article.publishedAt,
+        source: article.source.name,
+        url: article.url,
+        urlToImage: article.urlToImage,
+      }));
+
     res.json({
-      status: response.status,
-      totalResults: response.totalResults,
+      status: responseData.status,
+      totalResults: transformedArticles.length,
       articles: transformedArticles,
     });
   } catch (err) {

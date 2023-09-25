@@ -1,6 +1,6 @@
 {
   "name": "projeto-pesquisenews-backend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "app.js",
   "scripts": {
     "lint": "eslint . --fix",
@@ -8,8 +8,50 @@
     "dev": "nodemon app.js",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "Evandro de Melo Oliveira",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "keywords": [
+    "agile",
+    "api",
+    "authentication",
+    "backend",
+    "content-delivery",
+    "current-events",
+    "database",
+    "environment",
+    "express",
+    "filtering",
+    "HTTP",
+    "information-retrieval",
+    "jsonwebtoken",
+    "logging",
+    "middleware",
+    "mongoose",
+    "news",
+    "news-aggregator",
+    "newsapi",
+    "nodejs",
+    "open-source",
+    "optimization",
+    "rate-limit",
+    "research",
+    "RESTful",
+    "search",
+    "secure",
+    "security",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Evandro-developer/projeto-pesquisenews-backend.git"
+  },
+  "author": "Evandro M Oliveira",
+  "description": "PesquiseNews API RESTfull.",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.45.0",
@@ -31,7 +73,6 @@
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.3",
-    "newsapi": "^2.4.1",
     "regenerator-runtime": "^0.14.0",
     "validator": "^13.11.0",
     "winston": "^3.10.0"

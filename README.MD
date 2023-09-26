@@ -1,8 +1,8 @@
 # Projeto final: PesquiseNews API RESTfull
 
-Este projeto, intitulado ([PesquiseNews](https://pesquisenews.com.br)), oferece uma solução full-stack para busca e gestão de notícias em tempo real. Aqui está um resumo dos principais pontos abordados:
+Este projeto, intitulado [PesquiseNews](https://pesquisenews.com.br), oferece uma solução full-stack para busca e gestão de notícias em tempo real. Aqui está um resumo dos principais pontos abordados:
 
-Para obter informações sobre o frontend do ([PesquiseNews](https://pesquisenews.com.br)), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
+Para obter informações sobre o frontend do [PesquiseNews](https://pesquisenews.com.br), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
 
 ## Sumário:
 1. [Fase 2: Back-End](#fase-2-back-end)
@@ -134,7 +134,7 @@ Em seguida, o artigo é associado ao usuário atualizando a lista de savedArticl
 
 ### Segurança e Monitoramento:
 - ⛑️ **Helmet**: Ajuda na proteção do aplicativo contra vulnerabilidades web comuns.
-- **Express-rate-limit**: Middleware para limitar a taxa de solicitações à API.
+- 🚧 **Express-rate-limit**: Middleware para limitar a taxa de solicitações à API.
 
 ### Registro e Debugging:
 - 📜 **Logger**: Registro personalizado de todas as solicitações e erros, facilitando a depuração e monitoramento.
@@ -166,7 +166,7 @@ A função retorna true se o artigo for válido (não contém conteúdo indeseja
 
 **const isValidArticle** = (article) => {
   // Lista de valores indesejados
-  const undesiredValues = [null, "[Removed]", "https://removed.com"];
+  const undesiredValues = [null, "[Removed]", `https://removed.com`];
 
   // Verifica se algum valor indesejado está presente em quaisquer propriedades dos artigos
   const hasUndesiredContent = [
@@ -186,7 +186,7 @@ A função retorna true se o artigo for válido (não contém conteúdo indeseja
 Recomendamos que os desenvolvedores implementem sempre verificações como esta ao lidar com conteúdo de terceiros ou dados de APIs externas, garantindo assim a segurança, integridade e a melhor experiência do usuário.
 
 ## Hospedagem no Google Cloud:
-Este projeto foi hospedado no **Google Cloud** na Fase 3 do projeto ([PesquiseNews](https://pesquisenews.com.br)) para que você possa acessá-lo online. O backend do aplicativo implantado em uma instância do Google Compute Engine, enquanto o frontend no **Google Cloud Storage**. Isso permite experimentar o aplicativo sem precisar configurar nada localmente, aproveitando a infraestrutura e serviços de nuvem escaláveis. O GCP proporciona uma solução confiável e eficiente para hospedagem de aplicações, permitindo a nossa API ter alta disponibilidade e baixa latência.
+Este projeto foi hospedado no **Google Cloud** na Fase 3 do projeto [PesquiseNews](https://pesquisenews.com.br) para que você possa acessá-lo online. O backend do aplicativo implantado em uma instância do Google Compute Engine, enquanto o frontend no **Google Cloud Storage**. Isso permite experimentar o aplicativo sem precisar configurar nada localmente, aproveitando a infraestrutura e serviços de nuvem escaláveis. O GCP proporciona uma solução confiável e eficiente para hospedagem de aplicações, permitindo a nossa API ter alta disponibilidade e baixa latência.
 
 Agradecemos por visitar o aplicativo hospedado no **Google Cloud**!
 
@@ -202,7 +202,7 @@ Agradecemos por visitar o aplicativo hospedado no **Google Cloud**!
 **Contribuição ao projeto**: Design e experiência do usuário.
 
 ## Considerações Finais:
-A implementação do back-end para o ([PesquiseNews](https://pesquisenews.com.br)) não apenas eleva a funcionalidade do aplicativo, mas também exemplifica a integração eficiente de diversas tecnologias e bibliotecas para criar uma solução full-stack. Seja você um entusiasta de notícias ou apenas um usuário curioso, convidamos você a experimentar este aplicativo e mergulhar no mundo das notícias em tempo real.
+A implementação do back-end para o [PesquiseNews](https://pesquisenews.com.br) não apenas eleva a funcionalidade do aplicativo, mas também exemplifica a integração eficiente de diversas tecnologias e bibliotecas para criar uma solução full-stack. Seja você um entusiasta de notícias ou apenas um usuário curioso, convidamos você a experimentar este aplicativo e mergulhar no mundo das notícias em tempo real.
 Agradecemos a todos que contribuíram para o sucesso deste projeto. A implementação da API RESTfull marcou uma grande etapa em minha jornada de aprendizado, permitindo compreender os intricados detalhes do desenvolvimento back-end. Espero continuar aprimorando minhas habilidades e trazer ainda mais inovações no futuro.
 
 ## Licença:
@@ -224,6 +224,6 @@ Um agradecimento especial a todos que contribuíram para este projeto, seja por 
 
 Além disso, gostaria de agradecer à comunidade de desenvolvedores e aos muitos recursos online que tornaram possível aprender e implementar as várias tecnologias e bibliotecas usadas neste projeto. A jornada de aprendizado nunca termina, e sou grato por todas as oportunidades de aprendizado que surgiram ao longo do caminho.
 
-Finalmente, obrigado a você, leitor, por se interessar e gastar seu tempo aprendendo sobre o projeto ([PesquiseNews](https://pesquisenews.com.br)). Esperamos que você ache o projeto útil e talvez até seja inspirado a criar algo semelhante ou a contribuir para este projeto. Juntos, podemos continuar a expandir e melhorar o mundo do desenvolvimento web.
+Finalmente, obrigado a você, leitor, por se interessar e gastar seu tempo aprendendo sobre o projeto [PesquiseNews](https://pesquisenews.com.br). Esperamos que você ache o projeto útil e talvez até seja inspirado a criar algo semelhante ou a contribuir para este projeto. Juntos, podemos continuar a expandir e melhorar o mundo do desenvolvimento web.
 
 Obrigado.

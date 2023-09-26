@@ -17,7 +17,11 @@ const app = express();
 const PORT = process.env.PORT;
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: [
+    "https://pesquisenews.com.br",
+    "https://api.pesquisenews.com.br",
+    "https://www.pesquisenews.com.br",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,

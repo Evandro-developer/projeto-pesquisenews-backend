@@ -9,6 +9,7 @@ const articlesRouter = require("./articles");
 router.use("/", newsRouter);
 
 // Middleware de validação do cabeçalho de autorização em todas as rotas após validateAuthorizationHeader
+// Authorization header validation middleware for all routes after validateAuthorizationHeader
 router.use(validateAuthorizationHeader);
 
 router.use("/users", auth, usersRouter);

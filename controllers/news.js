@@ -1,8 +1,10 @@
 const isValidArticle = (article) => {
   // Lista de valores indesejados
+  // List of unwanted values
   const undesiredValues = [null, "[Removed]", "https://removed.com"];
 
   // Verifica se algum valor indesejado está presente em quaisquer propriedades dos artigos
+  // Checks if any unwanted value is present in any properties of the articles
   const hasUndesiredContent = [
     "title",
     "description",
@@ -12,6 +14,7 @@ const isValidArticle = (article) => {
   ].some((prop) => undesiredValues.includes(article[prop]));
 
   // Verifica se tem uma data inválida
+  // Checks for an invalid date
   const hasInvalidDate = article.publishedAt === "1970-01-01T00:00:00Z";
 
   return !(hasUndesiredContent || hasInvalidDate);

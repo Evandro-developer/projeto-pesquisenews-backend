@@ -3,8 +3,7 @@
 
 # Projeto final: PesquiseNews API RESTfull
 Este projeto, intitulado ([PesquiseNews](https://pesquisenews.com.br)), oferece uma solução full-stack para busca e gestão de notícias em tempo real. Aqui está um resumo dos principais pontos abordados:
-
-Para obter informações sobre o frontend do ([PesquiseNews](https://pesquisenews.com.br)), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
+Para obter informações sobre o frontend do [PesquiseNews](https://pesquisenews.com.br), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
 
 ## Sumário:
 1. [Fase 2: Back-End](#fase-2-back-end-etapa-única)
@@ -186,8 +185,7 @@ const isValidArticle = (article) => {
 Recomendamos que os desenvolvedores implementem sempre verificações como esta ao lidar com conteúdo de terceiros ou dados de APIs externas, garantindo assim a segurança, integridade e a melhor UX.
 
 ## Hospedagem no Google Cloud:
-Este projeto foi hospedado no **Google Cloud** na Fase 3 do projeto ([PesquiseNews](https://pesquisenews.com.br)) para que você possa acessá-lo online. O backend do aplicativo implantado em uma instância do Google Compute Engine, enquanto o frontend no **Google Cloud Storage**. Isso permite experimentar o aplicativo sem precisar configurar nada localmente, aproveitando a infraestrutura e serviços de nuvem escaláveis. O GCP proporciona uma solução confiável e eficiente para hospedagem de aplicações, permitindo a nossa API ter alta disponibilidade e baixa latência.
-
+Este projeto foi hospedado no **Google Cloud** na Fase 3 do projeto [PesquiseNews](https://pesquisenews.com.br) para que você possa acessá-lo online. O backend do aplicativo implantado em uma instância do Google Compute Engine, enquanto o frontend no **Google Cloud Storage**. Isso permite experimentar o aplicativo sem precisar configurar nada localmente, aproveitando a infraestrutura e serviços de nuvem escaláveis. O GCP proporciona uma solução confiável e eficiente para hospedagem de aplicações, permitindo a nossa API ter alta disponibilidade e baixa latência.
 Agradecemos por visitar o aplicativo hospedado no **Google Cloud**!
 
 ## Desenvolvido por:
@@ -202,7 +200,6 @@ Agradecemos por visitar o aplicativo hospedado no **Google Cloud**!
 
 ## Considerações Finais:
 A implementação do back-end para o ([PesquiseNews](https://pesquisenews.com.br)) não apenas eleva a funcionalidade do aplicativo, mas também exemplifica a integração eficiente de diversas tecnologias e bibliotecas para criar uma solução full-stack. Seja você um entusiasta de notícias ou apenas um usuário curioso, convidamos você a experimentar este aplicativo e mergulhar no mundo das notícias em tempo real.
-
 A implementação da API RESTfull marcou uma grande etapa em minha jornada de aprendizado, permitindo compreender os intricados detalhes do desenvolvimento back-end. Espero continuar aprimorando minhas habilidades e trazer ainda mais inovações no futuro.
 
 ## Licença:
@@ -301,7 +298,6 @@ To create the `.env` and `.env.production` files, you can copy the contents of t
 - **Endpoint**: `/`
 - **Description**: Searches for news articles through our API, which in turn queries the [News API](https://newsapi.org/).
 - **Usage example**: `http://localhost:3001?q=Beaches of the Northeast`
-
 Any user (even unauthenticated) can search for news using a keyword. The search returns the results in a format that fits the article schema. However, these articles are not saved to the database at this time.
 
 ### Authentication
@@ -314,7 +310,6 @@ Any user (even unauthenticated) can search for news using a keyword. The search 
 - **Description**: Authenticate an existing user and return an authentication token.
 
 Requiring authentication to save articles ensures that only registered users can save articles, which is useful for personalizing the user experience, maintaining a list of saved articles, and perhaps even preventing spam or misuse of the API.
-
 Only authenticated users can create (or save) an article.
 
 ### Users
@@ -408,7 +403,6 @@ We recommend that developers always implement checks like this when dealing with
 
 ## Hosting on Google Cloud:
 This project was hosted on **Google Cloud** in Phase 3 of the [PesquiseNews](https://pesquisenews.com.br) project so that you can access it online. The backend of the application is deployed on a Google Compute Engine instance, while the frontend is on **Google Cloud Storage**. This allows you to experience the application without needing to configure anything locally, taking advantage of scalable cloud infrastructure and services. GCP provides a reliable and efficient solution for hosting applications, allowing our API to have high availability and low latency.
-
 We thank you for visiting the application hosted on **Google Cloud**!
 
 ## Developed by:
@@ -423,7 +417,6 @@ We thank you for visiting the application hosted on **Google Cloud**!
 
 ## Final Thoughts:
 The implementation of the backend for [PesquiseNews](https://pesquisenews.com.br) not only enhances the functionality of the application but also exemplifies the efficient integration of various technologies and libraries to create a full-stack solution. Whether you are a news enthusiast or just a curious user, we invite you to try out this application and dive into the world of real-time news.
-
 The implementation of the RESTful API marked a significant milestone in my learning journey, allowing me to understand the intricate details of backend development. I hope to continue improving my skills and bringing even more innovations in the future.
 
 ## License:
@@ -438,5 +431,4 @@ We appreciate your following the development of this project, to the coordinator
 Finally, thank you, the reader, for your interest and for taking the time to learn about the [PesquiseNews](https://pesquisenews.com.br) project. We hope you find the project useful and perhaps even be inspired to create something similar or contribute to this project. Together, we can continue to expand and improve the world of web development.
 
 Thank you.
-
 ---

@@ -18,6 +18,7 @@ const createArticle = async (req, res, next) => {
     const ownerId = req.user._id;
 
     // Obtém os dados do artigo diretamente do corpo da solicitação
+    // Gets the article data directly from the request body
     const {
       keyword,
       title,
@@ -29,14 +30,17 @@ const createArticle = async (req, res, next) => {
     } = req.body;
 
     // Procura por um artigo existente na coleção Article com a mesma URL e owner
+    // Searches for an existing article in the Article collection with the same URL and owner
     const existingArticle = await Article.findOne({ url, owner: ownerId });
 
     // Verifica se um artigo com a mesma URL já existe
+    // Checks if an article with the same URL already exists
     if (existingArticle) {
       throw new Error("Este artigo já foi salvo.");
     }
 
     // Cria um novo artigo na coleção Article
+    // Creates a new article in the Article collection
     const newArticle = await Article.create({
       keyword,
       title,
@@ -49,6 +53,7 @@ const createArticle = async (req, res, next) => {
     });
 
     // Atualiza o usuário para adicionar o ID do novo artigo aos savedArticles
+    // Updates the user to add the ID of the new article to savedArticles
     await User.findByIdAndUpdate(
       ownerId,
       { $push: { savedArticles: newArticle._id } },
@@ -56,6 +61,7 @@ const createArticle = async (req, res, next) => {
     );
 
     // Constrói a resposta
+    // Builds the response
     const articlesArray = [newArticle];
     const response = {
       totalResults: articlesArray.length,
@@ -92,6 +98,7 @@ const deleteArticle = (req, res, next) => {
       }
 
       // Após deletar o artigo, atualiza o usuário para remover o ID do artigo dos savedArticles
+      // After deleting the article, updates the user to remove the article's ID from savedArticles
       return User.findByIdAndUpdate(
         userId,
         { $pull: { savedArticles: articlesId } },

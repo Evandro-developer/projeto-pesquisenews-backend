@@ -27,6 +27,7 @@ const createArticle = async (req, res, next) => {
       source,
       url,
       urlToImage,
+      lang,
     } = req.body;
 
     // Procura por um artigo existente na coleção Article com a mesma URL e owner
@@ -49,6 +50,7 @@ const createArticle = async (req, res, next) => {
       source,
       url,
       urlToImage,
+      lang,
       owner: ownerId,
     });
 

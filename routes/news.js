@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { getNews } = require("../controllers/news");
-const { validateGetNews } = require("../utils/validations");
+const { searchNews } = require("../controllers/news");
+const { validateSearchNews } = require("../utils/validations");
 
-router.get("/", validateGetNews, getNews);
+router.get("/", validateSearchNews, searchNews);
 
 module.exports = router;

@@ -48,6 +48,10 @@ const articleSchema = new mongoose.Schema({
     required: true,
     select: false,
   },
+  lang: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Article", articleSchema);

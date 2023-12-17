@@ -61,12 +61,11 @@ app.use(httpRequestLogger);
 app.use(limiter);
 
 app.post("/signup", validateUserSignup, createUser);
-
 app.post("/signin", validateUserSignin, userLogin);
 
 // Define as rotas principais usando o middleware "routes"
 // Define the main routes using the "routes" middleware
-app.use("/", routes);
+app.use(routes);
 
 // Middleware de log de erros
 // Error logging middleware

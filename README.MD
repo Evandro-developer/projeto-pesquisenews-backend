@@ -2,9 +2,9 @@
 ---
 
 # Projeto final: PesquiseNews API RESTfull
-Este projeto, intitulado ([PesquiseNews](https://pesquisenews.com.br)), oferece uma solução full-stack para busca e gestão de notícias em tempo real. Aqui está um resumo dos principais pontos abordados:
+Este projeto, intitulado [PesquiseNews](https://pesquisenews.com.br), oferece uma solução full-stack para busca e gestão de notícias em tempo real. Aqui está um resumo dos principais pontos abordados:
 
-Para obter informações sobre o frontend do ([PesquiseNews](https://pesquisenews.com.br)), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
+Para obter informações sobre o frontend do [PesquiseNews](https://pesquisenews.com.br), consulte o [README do projeto-pesquisenews-frontend](https://github.com/Evandro-developer/projeto-pesquisenews-frontend).
 
 ## Sumário:
 1. [Fase 2: Back-End](#fase-2-back-end-etapa-única)
@@ -12,7 +12,7 @@ Para obter informações sobre o frontend do ([PesquiseNews](https://pesquisenew
 3. [Back-End - Arquitetura e Características](#back-end---arquitetura-e-características)
 4. [Middleware e Utilitários](#middleware-e-utilitários)
 5. [Funcionalidades](#funcionalidades)
-6. [Automação de Ambientes para Otimização do Desenvolvimento (DX)](#automação-de-ambientes-para-otimização-do-desenvolvimento-(dx))
+6. [Automação de Ambientes para Otimização do Desenvolvimento (DX)](#automação-de-ambientes-para-otimização-do-desenvolvimento-dx)
 7. [Instalação e Execução](#Instalação-e-Execução)
 8. [Configuração do arquivo .env & .env.production](#Configuração-do-arquivo-.env-&-.env.production)
 9. [Endpoints da API](#Endpoints-da-API)
@@ -201,7 +201,7 @@ Agradecemos por visitar o aplicativo hospedado no **Google Cloud**!
 **Contribuição ao projeto**: Design e experiência do usuário.
 
 ## Considerações Finais:
-A implementação do back-end para o ([PesquiseNews](https://pesquisenews.com.br)) não apenas eleva a funcionalidade do aplicativo, mas também exemplifica a integração eficiente de diversas tecnologias e bibliotecas para criar uma solução full-stack. Seja você um entusiasta de notícias ou apenas um usuário curioso, convidamos você a experimentar este aplicativo e mergulhar no mundo das notícias em tempo real.
+A implementação do back-end para o [PesquiseNews](https://pesquisenews.com.br) não apenas eleva a funcionalidade do aplicativo, mas também exemplifica a integração eficiente de diversas tecnologias e bibliotecas para criar uma solução full-stack. Seja você um entusiasta de notícias ou apenas um usuário curioso, convidamos você a experimentar este aplicativo e mergulhar no mundo das notícias em tempo real.
 
 A implementação da API RESTfull marcou uma grande etapa em minha jornada de aprendizado, permitindo compreender os intricados detalhes do desenvolvimento back-end. Espero continuar aprimorando minhas habilidades e trazer ainda mais inovações no futuro.
 

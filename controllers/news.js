@@ -20,8 +20,10 @@ const isValidArticle = (article) => {
   return !(hasUndesiredContent || hasInvalidDate);
 };
 
-async function getNews(req, res, next) {
+async function searchNews(req, res, next) {
   const keyWord = req.query.q;
+  const lang = req.query.lang || "en";
+
   const toDate = new Date().toISOString().split("T")[0];
   const fromDate = new Date(new Date().setDate(new Date().getDate() - 7))
     .toISOString()
@@ -30,7 +32,7 @@ async function getNews(req, res, next) {
   const baseURL = "https://nomoreparties.co/news/v2/everything?";
   const queryParams = [
     `q=${keyWord}`,
-    "language=pt",
+    `language=${lang}`,
     "sortBy=relevancy",
     "page=1",
     `from=${fromDate}`,
@@ -60,6 +62,7 @@ async function getNews(req, res, next) {
         source: article.source.name,
         url: article.url,
         urlToImage: article.urlToImage,
+        lang,
       }));
 
     res.json({
@@ -75,6 +78,4 @@ async function getNews(req, res, next) {
   }
 }
 
-module.exports = {
-  getNews,
-};
+module.exports = { searchNews };

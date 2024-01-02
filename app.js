@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const compression = require("compression");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -14,6 +15,7 @@ const {
 } = require("./utils/validations");
 
 const app = express();
+app.use(compression());
 
 // Configuração de Ambiente Dinâmica: Adapta automaticamente as configurações, incluindo CORS, (desenvolvimento ou produção)
 // Dynamic Environment Configuration: Automatically adapts settings, including CORS, (development or production)
@@ -58,7 +60,8 @@ app.use(httpRequestLogger);
 
 // Aplica o limitador de taxa a todas as rotas
 // Apply the rate limiter to all routes
-app.use(limiter);
+
+// app.use(limiter);
 
 app.post("/signup", validateUserSignup, createUser);
 app.post("/signin", validateUserSignin, userLogin);

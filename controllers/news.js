@@ -1,7 +1,7 @@
 const isValidArticle = (article) => {
   // Lista de valores indesejados
   // List of unwanted values
-  const undesiredValues = [null, "[Removed]", "https://removed.com"];
+  const undesiredValues = [null, "[Removed]", "https://removed.com", ""];
 
   // Verifica se algum valor indesejado está presente em quaisquer propriedades dos artigos
   // Checks if any unwanted value is present in any properties of the articles
